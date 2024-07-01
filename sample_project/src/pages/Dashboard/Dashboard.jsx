@@ -1,5 +1,4 @@
 // import PropTypes from 'prop-types';
-
 const Dashboard = ({handleSetData,data}) => {
 
 
@@ -38,6 +37,8 @@ const Dashboard = ({handleSetData,data}) => {
             
 
         </table>
+
+       
         
         </>
         

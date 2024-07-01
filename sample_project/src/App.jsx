@@ -4,8 +4,12 @@ import { useState } from 'react'
 import './App.css'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard/Dashboard'
-
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
+import { BrowserRouter as Router,Route,Routes,Link } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './store'
+import Catpage from './pages/catpage/Catpage'
+import Counter from './store/counter'
+import ErrorPage from './pages/Errorpage'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -37,17 +41,27 @@ function App() {
   return (
     <>
     
-
+      <Provider store={store}>
+      
       <Router>
         <Routes>
           <Route  path='/' element={<Home/>}/>
+          <Route  path='/cat' element={<Catpage/>}/>
+          <Route  path='/counter' element={<Counter/>}/>
+          <Route  path='/error' element={<ErrorPage/>}/>
+
+
+
           {//setting prop along with component call 
           }
           <Route path ='/dashboard' element= {<Dashboard handleSetData={handleSetData} data={data}/>}/>
 
           
+
         </Routes>
       </Router>
+      </Provider>
+      
       
       
     </>

@@ -1,5 +1,7 @@
 import { useState } from "react"
+import {useNavigate } from "react-router-dom";
 import Register from "../Register/Register";
+import Counter from "./components/Counter";
 
 
 
@@ -12,8 +14,10 @@ const Home = ()=>{
                 count+1  
         )
     }
+const navigate = useNavigate()
     return(
     <>
+    
     <h1>This is home..</h1>
     <p>Lets count</p>
     
@@ -22,6 +26,13 @@ const Home = ()=>{
     </div>
         
     <Register/>
+    <Counter/>
+    <button onClick={()=>navigate('/cat')}>Cat page</button>
+    
+    
+    
+
+    
     
     </>
     )
