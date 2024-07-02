@@ -4,7 +4,7 @@ import { useState } from 'react'
 import './App.css'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard/Dashboard'
-import { BrowserRouter as Router,Route,Routes,Link } from 'react-router-dom'
+import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import Catpage from './pages/catpage/Catpage'
@@ -13,7 +13,7 @@ import ErrorPage from './pages/Errorpage'
 
 function App() {
   // const [count, setCount] = useState(0)
-
+   
                 const [data,setData]  = useState([{
                     id:1,name:'joe',email:'joe@gmail.com',city:'Kottayam' }]);
 
