@@ -1,10 +1,12 @@
-import axios from "axios";  
+import axios from "axios"; 
+
 
 
 export const getGalleryData = ()=>{
 
+    const url = import.meta.env.VITE_API_URL
     return(
-        axios.get('https://api.thecatapi.com/v1/images/search').then(
+        axios.get(url).then(
             (res)=>{
                 
                 return res;
