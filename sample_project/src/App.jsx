@@ -5,15 +5,17 @@ import './App.css'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard/Dashboard'
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { store } from './store'
 import Catpage from './pages/catpage/Catpage'
 import Counter from './store/counter'
-import ErrorPage from './pages/Errorpage'
+import Ekart from './pages/ecart'
+import Addproduct from './pages/ecart/AddProduct'
+import EcartDeleteItem from './pages/ecart/EcartDeleteItem'
+import NavBar from './components/Navbar'
 
 function App() {
-  // const [count, setCount] = useState(0)
-   
+
+                // simple component data  with state data and it send props to Dashboard component.
+                // should be avoid writing code in App.jsx
                 const [data,setData]  = useState([{
                     id:1,name:'joe',email:'joe@gmail.com',city:'Kottayam' }]);
 
@@ -24,11 +26,6 @@ function App() {
                     {id:3,name:'binu',email:'binu@gmail.com',city:'kochi'},
                     {id:4,name:'ivy',email:'ivy@gmail.com',city:'angamaly'}
                 ]
-                // const nullData = [
-                //   {id:0,name:'null',email:'null',city:'null'}
-                // ]
-
-
                 const handleSetData = ()=>{
                   if (index < tableData.length){
 
@@ -41,14 +38,19 @@ function App() {
   return (
     <>
     
-      <Provider store={store}>
-      
+    
+      {/* Routes points to correct component and accesed py path */}
       <Router>
+      <NavBar/>
         <Routes>
+          {/* <Route  path='/' element={<NavBar/>}/> */}
           <Route  path='/' element={<Home/>}/>
           <Route  path='/cat' element={<Catpage/>}/>
           <Route  path='/counter' element={<Counter/>}/>
-          <Route  path='/error' element={<ErrorPage/>}/>
+          <Route  path='/ecart' element={<Ekart/>}/>
+          <Route  path='/addproduct' element={<Addproduct/>}/>
+          <Route  path='/deleteproduct' element={<EcartDeleteItem/>}/>
+          
 
 
 
@@ -60,7 +62,7 @@ function App() {
 
         </Routes>
       </Router>
-      </Provider>
+      
       
       
       

@@ -24,7 +24,6 @@ export const counterSlice = createSlice({
 
 export const {increment,decrement}=counterSlice.actions
 
-//counter???
 export const selectCountValue = (state)=>
     state.counter.value;
 

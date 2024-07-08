@@ -1,18 +1,12 @@
 import { useState } from "react"
-import {useNavigate } from "react-router-dom";
-import Register from "../Register/Register";
 import Counter from "./components/Counter";
 import Button from '@mui/material/Button';
-
-
-
-
+import Typography from '@mui/material/Typography';
+import { styled } from '@mui/system';
 
 const Home = ()=>{
     const [count,setCount]= useState(0);
-
-    // importing the value of the url from .env for reference
-    const apiUrl = import.meta.env.VITE_API_URL
+    
 
     const buttonClickHandle = ()=>{
         setCount(
@@ -20,30 +14,45 @@ const Home = ()=>{
                 count+1  
         )
     }
-const navigate = useNavigate()
+   
+
+    // MUI Styling for Paragraph
+    const StyledParagraph = styled(Typography)(({ theme }) => ({
+        margin: theme.spacing(2),
+        fontSize: '1rem',
+        lineHeight: 1.5,
+    }));
+
+
     return(
     <>
     
     <h1>This is home..</h1>
-    <p>Lets count</p>
+
+    <StyledParagraph variant="body1" >
+      This app is developed by Joprin Joy as a summary of previous learning sessions. 
+      A navigation bar is present on all pages for easy navigation. In this app, you can view 
+      a simple product list named Ecart, which is styled with MUI. On the same page, you can add 
+      more products and delete products as desired. The Add Product component is presented as a 
+      modal using MUI. The Home button takes you to this page. The Cat Gallery showcases random 
+      cats each time you refresh. The Magic Table is straightforward; every row is added when you 
+      click the button. Explore Now.
+    </StyledParagraph>
+
+
+    <h4>This is a simple counter works on useState</h4>
     
     <div>
     <Button variant="contained" onClick={buttonClickHandle}>Count {count} </Button>
     </div>
         <div>
-            
-            <p>Url : {apiUrl} </p>
+    
         
         </div>
-    <Register/>
-    <Counter/>
-    <button onClick={()=>navigate('/cat')}>Cat page</button>
-    
-    
-    
 
-    
-    
+    {/* rendering another component inside a component */}
+    <Counter/>
+
     </>
     )
 }

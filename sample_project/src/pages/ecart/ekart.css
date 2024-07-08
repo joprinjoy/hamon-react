@@ -1,0 +1,18 @@
+img{
+    width: 300px;
+    height: 300px;
+}
+h1{
+    color: greenyellow
+}
+TableRow{
+    font-weight: bold;
+}
+
+.TableCell{
+    font-size: 16px;
+}
+
+.delete_text{
+    color: red;
+}

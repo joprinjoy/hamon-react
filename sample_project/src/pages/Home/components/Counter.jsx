@@ -9,7 +9,7 @@ const Counter = ()=>{
 
     return(
         <>
-        <h2>Counter</h2>
+        <h5>Here we have two buttons , one to increase the count and other for Decrease the count.</h5>
         <div>
         <button onClick={ ()=> dispatch(increment())} > Increment</button>
         <span>count:{count}</span>

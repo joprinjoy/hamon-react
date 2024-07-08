@@ -10,7 +10,7 @@ export const GalleryData= createAsyncThunk(
     'gallerygetter',
     async()=>{
         const response = await getGalleryData();
-        console.log("api return:",response.data);
+       
         return response?.data;
     }
 )
@@ -29,7 +29,7 @@ export const getGallerySlice = createSlice({
 
         .addCase(GalleryData.fulfilled,(state,action)=>{
             state.status = 'succeed'
-            console.log("action",action)
+            
             state.data = action.payload;
             
 
